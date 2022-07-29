@@ -1,0 +1,23 @@
+<div class="table d-flex justify-content-center table-hover card-body p-5 ">
+
+    <tbody>
+        <tr class="row mb-1">
+            <th colspan="2" style="text-align: center; background-color: rgb(167, 207, 207);">Receipt</th>
+            <td class="col col-md-6" style="font-weight: bold; font-size: 12px;">Date of Delivery</td>
+            <td class="col col-md-6" style="text-align: center;">{{order.dateOfDelivery| date}}</td>
+        </tr>
+        <tr class="row mb-1">
+            <td class="col col-md-6" style="font-weight: bold; font-size: 12px">Processing Charge</td>
+            <td class="col col-md-6" style="text-align: center;">{{order.processingCharge}}</td>
+        </tr>
+        <tr class="row mb-1">
+            <td class="col col-md-6" style="font-weight: bold; font-size: 12px">Packaging and Delivery Charge</td>
+            <td class="col col-md-6" style="text-align: center;">{{order.packagingAndDeliveryCharge}}</td>
+        </tr>
+        <tr class="row mb-1">
+            <td class="col col-md-6" style="font-weight: bold; background-color: darkgrey; font-size: 12px">Total
+                Charges</td>
+            <td class="col col-md-6" style="text-align: center; background-color: darkgrey">{{order.totalCharge}}</td>
+        </tr>
+    </tbody>
+</div>

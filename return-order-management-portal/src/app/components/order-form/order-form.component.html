@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+<div class="fluid-container mt-4 h-100 fontstyle">
+    <div class="row d-flex justify-content-center align-items-center" style="margin-bottom: 50px;">
+        <div [hidden]="orderDetails" class="col-12 col-md-8 col-lg-6 col-xl-6">
+            <div class="card shadow-2-strong">
+                <div class="card-header p-3 left" style="background-color: black; color: white;">
+                    <div class="h4"> Create <span class="stl" style="font-size: 1.5rem;">Order Request</span></div>
+                </div>
+                <div class="card-body p-3 text-center" >
+
+                    <form #orderform="ngForm" (ngSubmit)="onSubmit(orderform)" style="padding: 0px 100px 0px 100px">
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" style="font-size: 1rem; float: left" for="customer-name">
+                                Your Name:
+                            </label>
+
+                            <input ngModel #userName="ngModel" id="customer-name" name="userName"
+                                placeholder="Enter you name " type="text" class="form-control" required minlength="3">
+                            <div class="error" *ngIf="userName.touched &&!userName.valid">
+                                <span *ngIf="userName.errors?.['required']">
+                                    Customer Name is Mandatory!
+                                </span>
+                                <span *ngIf="userName.errors?.['minlength']">
+                                    Your Name must be of 3 characters!
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="form-group mb-4 ">
+                            <label class="form-label" style="font-size: 1rem; float: left" for="contact-number">
+                                Contact Number:
+                            </label>
+                                <input ngModel #contactNumber="ngModel" id="contact-number"
+                                    placeholder="Enter your 10 digit mobile number" type="text" name="contactNumber"
+                                    class="form-control" required pattern="[0-9]{10,12}" maxLength="11" minlength="10">
+                                    <div class="error" *ngIf="userName.touched &&!userName.valid">
+                                <span class="error" *ngIf="contactNumber.touched &&!contactNumber.valid">
+                                    <span *ngIf="contactNumber.errors?.['required']">
+                                        Your Contact Number is Mandatory.
+                                    </span>
+                                    <span *ngIf="contactNumber.errors?.['pattern']">
+                                        Invalid Conctact number! Please check again.
+                                    </span>
+                                    <span *ngIf="contactNumber.errors?.['maxlength']">
+                                        Your mobile number can be max 11 characters long.
+                                    </span>
+                                </span>
+                                </div>
+                            
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" style="font-size: 1rem; float: left;" for="component-name">
+                                Component Name:
+                            </label>
+                            
+                                <input id="component-name" type="text" placeholder="Component name you returning"
+                                    ngModel #componentName="ngModel" name="componentName" class="form-control" required>
+                                <div class="error" *ngIf="componentName.touched &&!componentName.valid">
+                                    <span *ngIf="componentName.errors?.['required']">
+                                        Please Enter Component Name!.
+                                    </span>
+                                </div>
+                            </div>
+                        
+                        <div class="form-group mb-4">
+                            <label class="form-label" style="font-size: 1rem; float: left;" for="component-type" >
+                                Component Type:
+                            </label>
+                                <select name="componentType" palceholder="Component Type" id="component-type"
+                                    class="form-control" required ngModel #componentType="ngModel">
+                                    <option value="" disabled selected>Select your option</option>
+                                    <option value="Integral">Integral</option>
+                                    <option value="Accessory">Accessory</option>
+                                </select>
+            
+                        </div>
+                        <div class="form-group mb-4">
+                            <label style="font-size: 1rem; float: left;" for="quantity">
+                                Quantity:
+                            </label>
+                           
+                                <input id="quantity" placeholder="Quantity" name="quantity" type="text"
+                                    pattern="^[1-9][0-9]*" class="form-control" required ngModel #quantity="ngModel">
+                                <div class="error" *ngIf="quantity.touched &&!quantity.valid">
+                                    <span *ngIf="quantity.errors?.['required']">
+                                        Quantity is Mandatory!
+                                    </span>
+                                    <span *ngIf="quantity.errors?.['pattern']">
+                                        Quantity Should be Greater than 0, Please check again!
+                                    </span>
+                                </div>
+                        </div>
+                        <div class="alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+                        <div class="form-group">
+                            <a><button [disabled]="!orderform.valid" class="btn" type="submit"
+                                    style="color: white;">Proceed</button></a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="orderDetails" class="jcol-12 col-md-8 col-lg-6 col-xl-6 fontstyle">
+            <div class="card shadow-2-strong">
+                <div class="card-header lefft p-2" style="background-color: black; color: white;">
+                    <div class="h3">Take a look at your <span class="stl">Details</span></div>
+                </div>
+                <app-confirmation [order]="orderDetails"></app-confirmation>
+                <div class="card-footer btn-group justify-content-between">
+                    <div class="col-md-4 bbtn">
+                        <!-- <a><button type="submit" (click)="cancel()" class="btn form-control" style="color: white;">Change details</button></a> -->
+                    </div>
+                    <div class="bbtn" style="float: right;">
+                    <a><button type="submit" (click)="proceedToPay()" class="btn form-control" style="color: white;">Payment</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

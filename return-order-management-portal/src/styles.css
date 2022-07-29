@@ -1,0 +1,15 @@
+body {
+    background-color: #000000 !important;
+}
+
+.error {
+    color: red;
+}
+
+input.ng-invalid.ng-touched {
+    border-bottom: solid 3px red !important;
+}
+
+input.ng-valid.ng-touched {
+    border-bottom: solid 3px green !important;
+}

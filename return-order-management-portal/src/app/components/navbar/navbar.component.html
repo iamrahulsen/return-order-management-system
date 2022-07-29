@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li class="logo" style="color: blanchedalmond;" routerLink="/">Return Order Management</li>
+    <li class="btn" style="color: blanchedalmond;" routerLink="/">ROM</li>
+    <div class="items">
+      <form class="d-flex" (ngSubmit)="logout()">
+        <button class="btn-danger" style="padding: 10px; border-radius: 0.5em;" *ngIf="isloggedin">Logout</button>
+      </form>
+    </div>
+  </ul>
+</nav>
