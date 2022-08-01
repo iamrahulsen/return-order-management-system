@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrderDetails } from '../../Models/order-deatails';
-import { OrderDetailsService } from '../../Service/order-details.service';
+import { OrderDetailsService } from '../../Service/details.service';
 
 @Component({
   selector: 'app-confirmation',

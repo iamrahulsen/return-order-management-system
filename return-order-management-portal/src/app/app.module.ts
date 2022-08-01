@@ -10,7 +10,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { OrderStatusComponent } from './components/order-status/order-status.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaymentComponent } from './components/payment/payment.component';
-import { TokenInterceptorService } from './Service/token-interceptor.service';
+import { TokenInterceptorService } from './Service/interceptor.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { IndexComponent } from './components/index/index.component';

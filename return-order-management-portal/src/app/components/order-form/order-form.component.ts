@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderDetails } from '../../Models/order-deatails';
-import { AuthenticationService } from '../../Service/authentication.service';
-import { OrderDetailsService } from '../../Service/order-details.service';
+import { AuthenticationService } from '../../Service/auth.service';
+import { OrderDetailsService } from '../../Service/details.service';
 
 @Component({
   selector: 'app-order-form',

@@ -2,8 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, RouteReuseStrategy } from '@angular/router';
 import { OrderDetails } from '../../Models/order-deatails';
-import { AuthenticationService } from '../../Service/authentication.service';
-import { OrderDetailsService } from '../../Service/order-details.service';
+import { AuthenticationService } from '../../Service/auth.service';
+import { OrderDetailsService } from '../../Service/details.service';
 
 @Component({
   selector: 'app-payment',
@@ -54,14 +54,14 @@ export class PaymentComponent implements OnInit {
         switch (error.status) {
 
           case 401:
-            this.errorMessage = "user forbidden";
+            this.errorMessage = "The User is not allowed";
             break;
           case 400:
-            this.errorMessage = "Invalid input details";
+            this.errorMessage = "Your Credit Card Detials were wrong! Please check";
             break;
           case 403:
             {
-              this.errorMessage = "User Not Authorized";
+              this.errorMessage = "Unauthrorized User!";
               this.authservice.logout();
             }
             break;
