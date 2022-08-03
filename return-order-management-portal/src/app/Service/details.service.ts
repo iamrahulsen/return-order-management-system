@@ -7,7 +7,7 @@ import { OrderDetails } from '../Models/order-deatails';
 })
 export class OrderDetailsService {
 
-  private baseurl = 'http://localhost:9002';
+  private baseurl = 'http://52.199.122.58:9002';
   orderDetails?: OrderDetails;
   constructor(private http: HttpClient) {
 

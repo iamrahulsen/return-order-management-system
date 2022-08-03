@@ -18,7 +18,7 @@ export class AuthenticationService {
 
 
   authUser(loginbody: any) {
-    return this.http.post<authToken>('http://localhost:9001/authenticate', loginbody)
+    return this.http.post<authToken>('http://52.199.122.58:9001/authenticate', loginbody)
 
   }
 
