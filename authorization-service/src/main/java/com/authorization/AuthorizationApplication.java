@@ -40,7 +40,8 @@ public class AuthorizationApplication {
 				new Userdb("tarik", passwordEncoder.encode("tarik@1"), "ROLE_USER"),
 				new Userdb("mehtab", passwordEncoder.encode("mehtab@1"), "ROLE_USER"),
 				new Userdb("rupansen", passwordEncoder.encode("rupan@1"), "ROLE_USER"),
-				new Userdb("rumasen", passwordEncoder.encode("ruma@1"), "ROLE_USER")
+				new Userdb("rumasen", passwordEncoder.encode("ruma@1"), "ROLE_USER"),
+				new Userdb("rock", passwordEncoder.encode("rock@123"), "ROLE_USER")
 				).collect(Collectors.toList());
 		
 		// saving the details into the database 
