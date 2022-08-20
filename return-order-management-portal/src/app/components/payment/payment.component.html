@@ -8,7 +8,6 @@
                 </div>
                 <div class="card-body p-4">
                     <div class="p-2">
-                        <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
                         <div class="form-group row mb-2">
                             <label for="creditCard" class="form-label" style="font-size: 1rem; float: left">
                                 Card Number:
@@ -23,7 +22,6 @@
                             </span>
                         </div>
                         <div class="row">
-
                             <div class="form-group col-md-7">
                                 <label for="cardHolderName" class="form-label" style="font-size: 1rem; float: left">
                                     Card Holder Name:
@@ -55,6 +53,7 @@
                                         </tr>
                                     <tbody>
                                 </table>
+                                <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
                             </div>
                         </div>
                     </div>

@@ -57,7 +57,7 @@ export class PaymentComponent implements OnInit {
             this.errorMessage = "The User is not allowed";
             break;
           case 400:
-            this.errorMessage = "Your Credit Card Detials were wrong! Please check";
+            this.errorMessage = "Please check your Credit Card Detials and limit!";
             break;
           case 403:
             {

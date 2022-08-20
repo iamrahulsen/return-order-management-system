@@ -18,7 +18,7 @@ export class AuthenticationService {
 
 
   authUser(loginbody: any) {
-    return this.http.post<authToken>('http://52.199.122.58:9001/authenticate', loginbody)
+    return this.http.post<authToken>('http://54.250.187.28:9001/authenticate', loginbody)
 
   }
 
@@ -35,7 +35,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    // console.log('your are logout');
     sessionStorage.removeItem('expiration_time');
     sessionStorage.removeItem('jwt_token');
     this.route.navigate(['login']);

@@ -68,7 +68,6 @@ export class OrderFormComponent implements OnInit {
   proceedToPay() {
 
     this.route.navigate(['payment']);
-
   }
 
 

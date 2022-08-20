@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
         if (JSON.parse(sessionStorage.getItem('expiration_time') || '') > (Date.now() + ''))
           this.route.navigate(['/orderform']);
       }
-
   }
 
   log(x: any) {
@@ -48,7 +47,6 @@ export class LoginComponent implements OnInit {
       }, error => {
         console.log(error)
         switch (error.status) {
-
           case 401:
             this.errorMessage = "Invalid Username/Password";
             break;
@@ -59,9 +57,6 @@ export class LoginComponent implements OnInit {
             this.errorMessage = "Something went wrong";
         }
       })
-
     this.submitted = false;
   }
-
-
 }
